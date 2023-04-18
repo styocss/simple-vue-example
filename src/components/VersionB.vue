@@ -1,3 +1,9 @@
+<!-- 
+
+  Define the styles first in the <script setup> tag, then use them in the <template> tag.
+
+-->
+
 <script setup lang="ts">
 defineEmits(['switchTheme'])
 

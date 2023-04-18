@@ -1,3 +1,9 @@
+<!--
+
+  Directly use the style function in the <template> tag.
+
+-->
+
 <script setup lang="ts">
 defineEmits(['switchTheme'])
 
