@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@iconify/json': ^2.2.51
   '@rushstack/eslint-patch': ^1.2.0
-  '@styocss/vite-plugin-styocss': ^0.0.5
+  '@styocss/vite-plugin-styocss': 0.0.8
   '@types/node': ^18.14.2
   '@vitejs/plugin-vue': ^4.0.0
   '@vue/compiler-sfc': ^3.2.47
@@ -31,7 +31,7 @@ dependencies:
 devDependencies:
   '@iconify/json': 2.2.51
   '@rushstack/eslint-patch': 1.2.0
-  '@styocss/vite-plugin-styocss': 0.0.5_vite@4.2.1
+  '@styocss/vite-plugin-styocss': 0.0.8_vite@4.2.1
   '@types/node': 18.15.11
   '@vitejs/plugin-vue': 4.1.0_vite@4.2.1+vue@3.2.47
   '@vue/compiler-sfc': 3.2.47
@@ -410,23 +410,23 @@ packages:
     resolution: {integrity: sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==}
     dev: true
 
-  /@styocss/core/0.0.5:
-    resolution: {integrity: sha512-uOpw638rLj2T4r+I+usz0u66TRJ9OIdrRnNi4yQr4ciCTaqwYYkDH2c9aKiynfvz1D5olco7opCA2cu5jCxexQ==}
+  /@styocss/core/0.0.8:
+    resolution: {integrity: sha512-PwUQRZq5BUCBMrIkDgMzsKiBZKOUHZ1ahZYVgnJUEzYMUwwEw6mODmH+nALihg/6wGbuFrfU94wZz0CcKFdXpQ==}
     dependencies:
       csstype: 3.1.2
     dev: true
 
-  /@styocss/helpers/0.0.5:
-    resolution: {integrity: sha512-qzvDkbJ2jTQXahXjhyP2ki3z3iQ601yWl4tBNI3H2bshcx260ZnOFPU96V8mEHH8hTawLlvdrGIYJoETE7xtPg==}
+  /@styocss/helpers/0.0.8:
+    resolution: {integrity: sha512-TcpyMgr/r8cZHw2+A3H19kKAtOaSiK+vAN9m57F3ywZjGKwZCwUeaJrdDdDctQH3iA3KsZDvNnu27NR7laA0FQ==}
     dev: true
 
-  /@styocss/vite-plugin-styocss/0.0.5_vite@4.2.1:
-    resolution: {integrity: sha512-bPki+aV+zMgNMk3DVNeVLiiEuiitxoB+d75okUDVJUrbQcIFstdcP4yz1xvfNVee32l1AH3o5FjJzYk0tUC1hw==}
+  /@styocss/vite-plugin-styocss/0.0.8_vite@4.2.1:
+    resolution: {integrity: sha512-+6HVhwFS8KOgcO+xxk8syp657MBuv73RVhggumJZKxZxj3LVASfqo3tEy+sLzketAB7k6vsozVAqj9XRUL/g3A==}
     peerDependencies:
       vite: '>= 4.2'
     dependencies:
-      '@styocss/core': 0.0.5
-      '@styocss/helpers': 0.0.5
+      '@styocss/core': 0.0.8
+      '@styocss/helpers': 0.0.8
       local-pkg: 0.4.3
       vite: 4.2.1_@types+node@18.15.11
     dev: true

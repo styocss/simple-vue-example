@@ -19,11 +19,11 @@ const styles = {
       transition: 'all 0.3s ease',
     },
     {
-      $apply: ['theme:light'],
+      $selector: 'theme:light',
       backgroundColor: '#ffffff'
     },
     {
-      $apply: ['theme:dark'],
+      $selector: 'theme:dark',
       backgroundColor: '#414141'
     },
   ),
@@ -34,21 +34,21 @@ const styles = {
       transition: 'all 0.3s ease',
     },
     {
-      $selector: '&:hover',
+      $selector: ':hover',
       transform: 'scale(1.05)'
     },
     {
-      $apply: ['@md'],
+      $nestedWith: '@md',
       width: '250px',
       height: '250px',
     },
     {
-      $apply: ['@sm'],
+      $nestedWith: '@sm',
       width: '200px',
       height: '200px',
     },
     {
-      $apply: ['@xs'],
+      $nestedWith: '@xs',
       width: '150px',
       height: '150px',
     }
@@ -60,85 +60,48 @@ const styles = {
       fontWeight: '700',
     },
     {
-      $apply: ['theme:light'],
+      $selector: 'theme:light',
       color: '#A96462'
     },
     {
-      $apply: ['theme:dark'],
+      $selector: 'theme:dark',
       color: '#F5C2A0'
     },
     {
-      $apply: ['@md'],
+      $nestedWith: '@md',
       fontSize: '96px',
     },
     {
-      $apply: ['@sm'],
+      $nestedWith: '@sm',
       fontSize: '64px',
     },
     {
-      $apply: ['@xs'],
+      $nestedWith: '@xs',
       fontSize: '48px',
     }
   ),
   themeBtn: style(
+    'btn',
     {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '250px',
-      height: '100px',
-      border: 0,
-      borderRadius: '30px',
-      cursor: 'pointer',
-      transition: 'all 0.3s ease',
-      fontSize: '60px',
-    },
-    {
-      $selector: '&:not(:active):hover',
-      transform: 'scale(1.05)'
-    },
-    {
-      $selector: '&:active',
-      transform: 'scale(0.95)'
-    },
-    {
-      $apply: ['theme:light'],
+      $selector: 'theme:light',
       backgroundColor: '#A96462',
       color: '#ffffff'
     },
     {
-      $apply: ['theme:dark'],
+      $selector: 'theme:dark',
       backgroundColor: '#F5C2A0',
       color: '#414141'
     },
-    {
-      $apply: ['@md'],
-      width: '200px',
-      height: '80px',
-      fontSize: '48px',
-    },
-    {
-      $apply: ['@sm'],
-      width: '150px',
-      height: '60px',
-      fontSize: '36px',
-    },
-    {
-      $apply: ['@xs'],
-      width: '100px',
-      height: '40px',
-      fontSize: '24px',
-    }
   ),
   hiddenIfDark: style(
     {
-      $apply: ['theme:dark'],
+      $selector: 'theme:dark',
       display: 'none',
     },
   ),
   hiddenIfLight: style(
     {
-      $apply: ['theme:light'],
+      $selector: 'theme:light',
       display: 'none',
     },
   ),

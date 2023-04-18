@@ -17,11 +17,58 @@ export default defineConfig({
     StyoCSS({
       createStyo(builder){
         return builder
-          .registerMacroStyoRule('theme:light', [{ $selector: '[theme="light"]&,[theme="light"] &' }])
-          .registerMacroStyoRule('theme:dark', [{ $selector: '[theme="dark"]&,[theme="dark"] &' }])
-          .registerMacroStyoRule('@md', [{ $nestedWith: '@media (min-width: 768px) and (max-width: 1023px)' }])
-          .registerMacroStyoRule('@sm', [{ $nestedWith: '@media (min-width: 650px) and (max-width: 767px)' }])
-          .registerMacroStyoRule('@xs', [{ $nestedWith: '@media (max-width: 649px)' }])
+          .registerNestedWithTemplates({
+            '@md': '@media (min-width: 768px) and (max-width: 1023px)',
+            '@sm': '@media (min-width: 650px) and (max-width: 767px)',
+            '@xs': '@media (max-width: 649px)',
+          })
+          .registerSelectorTemplates({
+            'theme:light': '[theme="light"]{s},[theme="light"] {s}',
+            'theme:dark': '[theme="dark"]{s},[theme="dark"] {s}',
+          })
+          .registerStaticMacroStyoRule({
+            name: 'btn',
+            partials: [
+              {
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '250px',
+                height: '100px',
+                border: 0,
+                borderRadius: '30px',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                fontSize: '60px',
+              },
+              {
+                $selector: ':not(:active):hover',
+                transform: 'scale(1.05)'
+              },
+              {
+                $selector: ':active',
+                transform: 'scale(0.95)'
+              },
+              {
+                $nestedWith: '@md',
+                width: '200px',
+                height: '80px',
+                fontSize: '48px',
+              },
+              {
+                $nestedWith: '@sm',
+                width: '150px',
+                height: '60px',
+                fontSize: '36px',
+              },
+              {
+                $nestedWith: '@xs',
+                width: '100px',
+                height: '40px',
+                fontSize: '24px',
+              }
+            ]
+          })
           .done()
       },
       dts: true,
