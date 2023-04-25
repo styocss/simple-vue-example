@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@iconify/json': ^2.2.51
   '@rushstack/eslint-patch': ^1.2.0
-  '@styocss/vite-plugin-styocss': 0.0.9
+  '@styocss/vite-plugin-styocss': 0.1.2
   '@types/node': ^18.14.2
   '@vitejs/plugin-vue': ^4.0.0
   '@vue/compiler-sfc': ^3.2.47
@@ -31,7 +31,7 @@ dependencies:
 devDependencies:
   '@iconify/json': 2.2.51
   '@rushstack/eslint-patch': 1.2.0
-  '@styocss/vite-plugin-styocss': 0.0.9_vite@4.2.1
+  '@styocss/vite-plugin-styocss': 0.1.2_vite@4.2.1
   '@types/node': 18.15.11
   '@vitejs/plugin-vue': 4.1.0_vite@4.2.1+vue@3.2.47
   '@vue/compiler-sfc': 3.2.47
@@ -410,23 +410,18 @@ packages:
     resolution: {integrity: sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==}
     dev: true
 
-  /@styocss/core/0.0.9:
-    resolution: {integrity: sha512-i3DYYIqtQw5O8TVvfeqLlrtdbMrbpgW54wUdBmfWukuXWFTF0z2ua23g1ZV1rrPTPaDm1UQXi5j1sHQGkeepDg==}
+  /@styocss/core/0.1.2:
+    resolution: {integrity: sha512-ZTVZcfiq44UPEpWxZGPDi33X4gd5DLXFHtlU/IOwD6UNJW0S93elQsf9ZgDlYze/JtJasSccXEEGTpKhn+dY9w==}
     dependencies:
       csstype: 3.1.2
     dev: true
 
-  /@styocss/helpers/0.0.9:
-    resolution: {integrity: sha512-fwDx/ptvzclHosIIm/0F57PMbM8CU5j8z1QyyWVw2q/5AQgYT+RPIDxCliUGb7i8eUKqVjaaIoqq4sLJOmT2AQ==}
-    dev: true
-
-  /@styocss/vite-plugin-styocss/0.0.9_vite@4.2.1:
-    resolution: {integrity: sha512-inM4ZAmFGwrCmBChRTM3NLfEvQQZmQkS/Wbs8bkinv583WbWGd+fZ1kysXYeyv48qHDFNsbFI5WQ0kY52sZbpA==}
+  /@styocss/vite-plugin-styocss/0.1.2_vite@4.2.1:
+    resolution: {integrity: sha512-0gEPQC1k8rpTL8zK0JAJYtEk2NVTbWkYJzZ8Cy9m0rbCUMucT2phf8dlHOxU96eDm/z7AU2bqiiQsajzvfhMRA==}
     peerDependencies:
       vite: '>= 4.2'
     dependencies:
-      '@styocss/core': 0.0.9
-      '@styocss/helpers': 0.0.9
+      '@styocss/core': 0.1.2
       local-pkg: 0.4.3
       vite: 4.2.1_@types+node@18.15.11
     dev: true

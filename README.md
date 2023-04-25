@@ -10,9 +10,9 @@ Showcasing the following features:
 
 See the [vite.config.ts](./vite.config.ts) file for the configuration.
 
-See the [VersionA.vue](./src/components/VersionA.vue) file for the example of using `style()` directly in the `<template>`.
+See the [VersionA.vue](./src/components/VersionA.vue) file for the example of using `styo()` directly in the `<template>`.
 
-See the [VersionB.vue](./src/components/VersionB.vue) file for the example of defining styles using `style()` in the `<script setup>`, then using them in the `<template>`.
+See the [VersionB.vue](./src/components/VersionB.vue) file for the example of defining styles using `styo()` in the `<script setup>`, then using them in the `<template>`.
 
 ## Project Setup
 

@@ -28,7 +28,7 @@ coverage
 *.sw?
 
 # auto generated files
-styocss.d.ts
+styo.d.ts
 auto-imports.d.ts
 components.d.ts
 .eslintrc-auto-import.json

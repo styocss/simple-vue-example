@@ -2,7 +2,7 @@
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": [
     "env.d.ts",
-    "styocss.d.ts",
+    "styo.d.ts",
     "auto-imports.d.ts",
     "components.d.ts",
     "src/**/*",

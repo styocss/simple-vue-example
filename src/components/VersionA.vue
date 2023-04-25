@@ -11,7 +11,7 @@ defineEmits(['switchTheme'])
 
 <template>
   <main
-    :class="style(
+    :class="styo(
       {
         display: 'flex',
         flexDirection: 'column',
@@ -22,69 +22,73 @@ defineEmits(['switchTheme'])
         transition: 'all 0.3s ease',
       },
       {
-        $selector: 'theme:light',
+        $selector: '[theme:light]',
         backgroundColor: '#ffffff'
       },
       {
-        $selector: 'theme:dark',
+        $selector: '[theme:dark]',
         backgroundColor: '#414141'
       },
     )"
   >
     <img
       src="@/assets/logo.svg"
-      :class="style(
+      :class="styo(
         {
           width: '300px',
           height: '300px',
           transition: 'all 0.3s ease',
+          backgroundColor: 'rgba(0, 0, 0, 0.1)',
+          borderRadius: '20px',
         },
+        'pa-4',
         {
           $selector: ':hover',
+          $apply: ['pa-36'],
           transform: 'scale(1.05)'
         },
         {
-          $nestedWith: '@md',
+          $nestedWith: '@mdOnly',
           width: '250px',
           height: '250px',
         },
         {
-          $nestedWith: '@sm',
+          $nestedWith: '@smOnly',
           width: '200px',
           height: '200px',
         },
         {
-          $nestedWith: '@xs',
+          $nestedWith: '@xsOnly',
           width: '150px',
           height: '150px',
         }
       )"
     >
     <h1
-      :class="style(
+      :class="styo(
         {
           margin: '0 0 50px 0',
           fontSize: '128px',
           fontWeight: '700',
         },
         {
-          $selector: 'theme:light',
+          $selector: '[theme:light]',
           color: '#A96462'
         },
         {
-          $selector: 'theme:dark',
+          $selector: '[theme:dark]',
           color: '#F5C2A0'
         },
         {
-          $nestedWith: '@md',
+          $nestedWith: '@mdOnly',
           fontSize: '96px',
         },
         {
-          $nestedWith: '@sm',
+          $nestedWith: '@smOnly',
           fontSize: '64px',
         },
         {
-          $nestedWith: '@xs',
+          $nestedWith: '@xsOnly',
           fontSize: '48px',
         }
       )"
@@ -93,15 +97,15 @@ defineEmits(['switchTheme'])
     </h1>
 
     <button 
-      :class="style(
+      :class="styo(
         'btn',
         {
-          $selector: 'theme:light',
+          $selector: '[theme:light]',
           backgroundColor: '#A96462',
           color: '#ffffff'
         },
         {
-          $selector: 'theme:dark',
+          $selector: '[theme:dark]',
           backgroundColor: '#F5C2A0',
           color: '#414141'
         },
@@ -109,17 +113,17 @@ defineEmits(['switchTheme'])
       @click="$emit('switchTheme')"
     >
       <IconLineMdMoonAltLoop 
-        :class="style(
+        :class="styo(
           {
-            $selector: 'theme:dark',
+            $selector: '[theme:dark]',
             display: 'none',
           },
         )" 
       />
       <IconLineMdMoonAltToSunnyOutlineLoopTransition 
-        :class="style(
+        :class="styo(
           {
-            $selector: 'theme:light',
+            $selector: '[theme:light]',
             display: 'none',
           },
         )"

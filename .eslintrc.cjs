@@ -13,6 +13,8 @@ module.exports = {
     ecmaVersion: 'latest'
   },
   globals: {
-    'style': 'readonly'
+    'styo': 'readonly',
+    'style': 'readonly',
+    'css': 'readonly'
   },
 }

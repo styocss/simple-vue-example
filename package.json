@@ -18,7 +18,7 @@
   "devDependencies": {
     "@iconify/json": "^2.2.51",
     "@rushstack/eslint-patch": "^1.2.0",
-    "@styocss/vite-plugin-styocss": "0.0.9",
+    "@styocss/vite-plugin-styocss": "0.1.2",
     "@types/node": "^18.14.2",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/compiler-sfc": "^3.2.47",

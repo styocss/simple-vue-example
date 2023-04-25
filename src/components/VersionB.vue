@@ -8,7 +8,7 @@
 defineEmits(['switchTheme'])
 
 const styles = {
-  mainContainer: style(
+  mainContainer: styo(
     {
       display: 'flex',
       flexDirection: 'column',
@@ -19,15 +19,15 @@ const styles = {
       transition: 'all 0.3s ease',
     },
     {
-      $selector: 'theme:light',
+      $selector: '[theme:light]',
       backgroundColor: '#ffffff'
     },
     {
-      $selector: 'theme:dark',
+      $selector: '[theme:dark]',
       backgroundColor: '#414141'
     },
   ),
-  logoImg: style(
+  logoImg: styo(
     {
       width: '300px',
       height: '300px',
@@ -38,70 +38,70 @@ const styles = {
       transform: 'scale(1.05)'
     },
     {
-      $nestedWith: '@md',
+      $nestedWith: '@mdOnly',
       width: '250px',
       height: '250px',
     },
     {
-      $nestedWith: '@sm',
+      $nestedWith: '@smOnly',
       width: '200px',
       height: '200px',
     },
     {
-      $nestedWith: '@xs',
+      $nestedWith: '@xsOnly',
       width: '150px',
       height: '150px',
     }
   ),
-  brandTitle: style(
+  brandTitle: styo(
     {
       margin: '0 0 50px 0',
       fontSize: '128px',
       fontWeight: '700',
     },
     {
-      $selector: 'theme:light',
+      $selector: '[theme:light]',
       color: '#A96462'
     },
     {
-      $selector: 'theme:dark',
+      $selector: '[theme:dark]',
       color: '#F5C2A0'
     },
     {
-      $nestedWith: '@md',
+      $nestedWith: '@mdOnly',
       fontSize: '96px',
     },
     {
-      $nestedWith: '@sm',
+      $nestedWith: '@smOnly',
       fontSize: '64px',
     },
     {
-      $nestedWith: '@xs',
+      $nestedWith: '@xsOnly',
       fontSize: '48px',
     }
   ),
-  themeBtn: style(
+  themeBtn: styo(
     'btn',
     {
-      $selector: 'theme:light',
+      $selector: '[theme:light]',
       backgroundColor: '#A96462',
       color: '#ffffff'
     },
     {
-      $selector: 'theme:dark',
+      $selector: '[theme:dark]',
       backgroundColor: '#F5C2A0',
       color: '#414141'
     },
   ),
-  hiddenIfDark: style(
+  hiddenIfDark: styo(
     {
-      $selector: 'theme:dark',
+      $selector: '[theme:dark]',
       display: 'none',
     },
   ),
-  hiddenIfLight: style(
+  hiddenIfLight: styo(
     {
-      $selector: 'theme:light',
+      $selector: '[theme:light]',
       display: 'none',
     },
   ),

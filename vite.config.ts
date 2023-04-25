@@ -15,18 +15,81 @@ export default defineConfig({
     Inspect(),
     Vue(),
     StyoCSS({
-      createStyo(builder){
-        return builder
-          .registerNestedWithTemplates({
-            '@md': '@media (min-width: 768px) and (max-width: 1023px)',
-            '@sm': '@media (min-width: 650px) and (max-width: 767px)',
-            '@xs': '@media (max-width: 649px)',
-          })
-          .registerSelectorTemplates({
-            'theme:light': '[theme="light"]{s},[theme="light"] {s}',
-            'theme:dark': '[theme="dark"]{s},[theme="dark"] {s}',
-          })
-          .registerStaticMacroStyoRule({
+      config: {
+        aliases: {
+          nested: [
+            {
+              type: 'dynamic',
+              key: '@min',
+              pattern: /^@min\[(\d+)\]$/,
+              exampleList: ['@min[576]', '@min[768]', '@min[992]', '@min[1200]', '@min[1400]'],
+              createValue: (matched: RegExpMatchArray) => `@media (min-width: ${matched[1]}px)`,
+            },
+            {
+              type: 'dynamic',
+              key: '@max',
+              pattern: /^@max\[(\d+)\]$/,
+              exampleList: ['@max[575]', '@max[767]', '@max[991]', '@max[1199]', '@max[1399]'],
+              createValue: (matched: RegExpMatchArray) => `@media (max-width: ${matched[1]}px)`,
+            },
+            {
+              type: 'dynamic',
+              key: '@between',
+              pattern: /^@between\[(\d+),(\d+)\]$/,
+              exampleList: ['@between[576,767]', '@between[768,991]', '@between[992,1199]', '@between[1200,1399]'],
+              createValue: (matched: RegExpMatchArray) => `@media (min-width: ${matched[1]}px) and (max-width: ${matched[2]}px)`,
+            },
+            {
+              type: 'static',
+              key: '@xsOnly',
+              alias: '@xsOnly',
+              value: '@max[575]',
+            },
+            {
+              type: 'static',
+              key: '@smOnly',
+              alias: '@smOnly',
+              value: '@between[576,767]',
+            },
+            {
+              type: 'static',
+              key: '@mdOnly',
+              alias: '@mdOnly',
+              value: '@between[768,991]',
+            },
+            {
+              type: 'static',
+              key: '@lgOnly',
+              alias: '@lgOnly',
+              value: '@between[992,1199]',
+            },
+            {
+              type: 'static',
+              key: '@xlOnly',
+              alias: '@xlOnly',
+              value: '@between[1200,1399]',
+            },
+            {
+              type: 'static',
+              key: '@xxlOnly',
+              alias: '@xxlOnly',
+              value: '@min[1400]',
+            },
+          ],
+          selector: [
+            {
+              type: 'dynamic',
+              key: '[theme]',
+              pattern: /^\[theme:(.*)\]$/,
+              exampleList: ['[theme:dark]', '[theme:light]'],
+              createValue: (matched: RegExpMatchArray) => `[theme="${matched[1]}"]{s},[theme="${matched[1]}"] {s}`,
+            }
+          ]
+        },
+        macroStyles: [
+          {
+            type: 'static',
+            key: 'btn',
             name: 'btn',
             partials: [
               {
@@ -50,26 +113,38 @@ export default defineConfig({
                 transform: 'scale(0.95)'
               },
               {
-                $nestedWith: '@md',
+                $nested: '@mdOnly',
                 width: '200px',
                 height: '80px',
                 fontSize: '48px',
               },
               {
-                $nestedWith: '@sm',
+                $nested: '@smOnly',
                 width: '150px',
                 height: '60px',
                 fontSize: '36px',
               },
               {
-                $nestedWith: '@xs',
+                $nested: '@xsOnly',
                 width: '100px',
                 height: '40px',
                 fontSize: '24px',
               }
-            ]
-          })
-          .done()
+            ],
+          },
+          {
+            type: 'dynamic',
+            key: 'padding-all',
+            pattern: /^pa-(\d+)$/,
+            exampleList: ['pa-4'],
+            createPartials: (match) => {
+              const n = match[1]
+              return [{
+                padding: `${n}px`,
+              }]
+            }
+          }
+        ],
       },
       dts: true,
     }),
